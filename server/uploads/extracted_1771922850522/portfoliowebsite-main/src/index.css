@@ -1,0 +1,83 @@
+:root {
+  /* Default Dark Mode Variables */
+  --bg-body: #030014;
+  --bg-secondary: #0f172a;
+
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-accent: #a78bfa;
+  /* Light Purple */
+
+  --primary-color: #7c3aed;
+  --secondary-color: #2dd4bf;
+
+  --card-bg: rgba(30, 41, 59, 0.4);
+  --card-border: rgba(255, 255, 255, 0.05);
+  --card-shadow: rgba(0, 0, 0, 0.5);
+
+  --header-bg: rgba(3, 0, 20, 0.3);
+  --header-border: rgba(255, 255, 255, 0.05);
+
+  --input-bg: rgba(15, 23, 42, 0.6);
+  --input-border: rgba(255, 255, 255, 0.1);
+
+  --blob-color-1: #7c3aed;
+  --blob-color-2: #2dd4bf;
+}
+
+[data-theme="light"] {
+  /* Light Mode Overrides */
+  --bg-body: #f8fafc;
+  --bg-secondary: #e2e8f0;
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-accent: #7c3aed;
+  /* Darker Purple for contrast on light */
+
+  --primary-color: #7c3aed;
+  --secondary-color: #0d9488;
+  /* Darker Teal */
+
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --card-border: rgba(203, 213, 225, 0.4);
+  --card-shadow: rgba(148, 163, 184, 0.15);
+
+  --header-bg: rgba(255, 255, 255, 0.7);
+  --header-border: rgba(203, 213, 225, 0.5);
+
+  --input-bg: rgba(255, 255, 255, 0.9);
+  --input-border: rgba(203, 213, 225, 0.8);
+
+  --blob-color-1: #d8b4fe;
+  /* Lighter blobs for light mode */
+  --blob-color-2: #99f6e4;
+}
+
+/* Base global styles using variables */
+body {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-body);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

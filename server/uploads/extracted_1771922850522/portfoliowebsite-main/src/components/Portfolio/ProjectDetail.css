@@ -1,0 +1,340 @@
+.project-detail-container {
+    min-height: 100vh;
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+    padding: 6rem 5% 8rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Header Section */
+.detail-header-section {
+    max-width: 1200px;
+    margin: 0 auto 4rem;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 4rem;
+    align-items: flex-start;
+}
+
+.header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.project-main-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--text-primary);
+}
+
+.project-short-intro {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    max-width: 500px;
+}
+
+.live-preview-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    width: fit-content;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    background-color: #7c3aed;
+    /* Specific Purple from image */
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.live-preview-btn:hover {
+    transform: translateY(-3px);
+    background-color: #6d28d9;
+}
+
+.header-right-metadata {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.meta-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.meta-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-transform: capitalize;
+}
+
+.meta-value {
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+/* Carousel Section */
+.detail-carousel-section {
+    max-width: 1400px;
+    margin: 0 auto 6rem;
+    position: relative;
+}
+
+.carousel-main-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 2rem;
+}
+
+.carousel-viewport {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 24px;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.carousel-slide {
+    min-width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-nav-btn {
+    background: var(--bg-secondary);
+    border: 1px solid var(--card-border);
+    color: var(--text-primary);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.carousel-nav-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: scale(1.1);
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 2rem;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--text-muted);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.carousel-dot.active {
+    width: 30px;
+    border-radius: 10px;
+    background: #7c3aed;
+}
+
+/* Description Section */
+.detail-description-section {
+    max-width: 1000px;
+    margin: 0 auto 6rem;
+}
+
+.description-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+.description-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.description-body p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+}
+
+/* Next Projects Section */
+.next-projects-section {
+    max-width: 1200px;
+    margin: 4rem auto 0;
+    padding-top: 6rem;
+    border-top: 1px solid var(--card-border);
+}
+
+.next-projects-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+.next-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.next-project-card {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.next-proj-image {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.next-proj-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.next-proj-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(99, 102, 241, 0.6);
+    /* Indigo overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.next-proj-overlay span {
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+}
+
+.next-project-card:hover .next-proj-image img {
+    transform: scale(1.1);
+}
+
+.next-project-card:hover .next-proj-overlay {
+    opacity: 1;
+}
+
+.next-project-card:hover .next-proj-overlay span {
+    transform: translateY(0);
+}
+
+.next-proj-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.next-proj-category {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #6366f1;
+    letter-spacing: 1px;
+}
+
+.next-proj-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.back-to-all {
+    text-align: center;
+}
+
+.back-home-link {
+    display: inline-block;
+    padding: 1rem 3rem;
+    border: 1px solid var(--card-border);
+    border-radius: 50px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.back-home-link:hover {
+    background: var(--text-primary);
+    color: var(--bg-body);
+    border-color: var(--text-primary);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .detail-header-section {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .project-main-title {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-right-metadata {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .carousel-nav-btn {
+        display: none;
+    }
+
+    .project-main-title {
+        font-size: 2.2rem;
+    }
+
+    .description-title {
+        font-size: 2rem;
+    }
+}

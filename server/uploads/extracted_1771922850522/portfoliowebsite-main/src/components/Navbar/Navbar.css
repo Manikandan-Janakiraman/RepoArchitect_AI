@@ -1,0 +1,197 @@
+/* Navbar Styles - Dark Theme */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    background: var(--header-bg);
+    /* Transparent Dark */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--header-border);
+    padding: 0 5%;
+}
+
+
+.new {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 1rem 0 1rem;
+    color: var(--text-primary);
+    /* Fallback */
+    background: linear-gradient(to right, var(--text-primary), #a5b4fc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.navbar-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    text-decoration: none;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -1px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.logo-symbol {
+    color: var(--primary-color);
+    /* Purple dot */
+}
+
+/* Desktop Menu */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s;
+    position: relative;
+    padding: 0.5rem 0;
+    cursor: pointer;
+}
+
+.nav-menu li a:hover {
+    color: var(--text-primary);
+}
+
+.nav-menu li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s;
+}
+
+.nav-menu li a:hover::after {
+    width: 100%;
+}
+
+.btn-start-project {
+    background: linear-gradient(135deg, var(--primary-color), #ec4899);
+    color: white;
+    padding: 0.7rem 1.8rem;
+    border-radius: 50px;
+    border: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-start-project:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.5);
+    background: linear-gradient(135deg, #8b5cf6, #db2777);
+}
+
+.btn-start-project.mobile {
+    display: none;
+}
+
+/* Mobile Toggle */
+.mobile-menu-icon {
+    display: none;
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+/* Mobile Nav - Hidden by default on desktop */
+.mobile-nav {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .nav-menu {
+        display: none;
+        /* Hide desktop list */
+    }
+
+    .btn-start-project {
+        display: none;
+        /* Hide desktop button */
+    }
+
+    .mobile-menu-icon {
+        display: block;
+    }
+
+    .navbar-container {
+        padding: 1rem 0;
+    }
+
+    /* Mobile Menu Dropdown */
+    .mobile-nav {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-body);
+        border-top: 1px solid var(--header-border);
+        border-bottom: 1px solid var(--header-border);
+        color: var(--text-primary);
+        padding: 2rem;
+        gap: 1.5rem;
+        align-items: center;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: all 0.3s ease;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .mobile-nav.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .mobile-nav a {
+        color: var(--text-primary);
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+
+    .btn-start-project.mobile {
+        display: inline-block;
+        margin-top: 1rem;
+        width: 100%;
+        max-width: 200px;
+    }
+}

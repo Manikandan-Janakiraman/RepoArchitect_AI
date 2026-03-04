@@ -1,0 +1,19 @@
+/* Global Content Layout */
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure sections take full width */
+section {
+  width: 100%;
+}
+
+/* Fix for any potential collapse */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}

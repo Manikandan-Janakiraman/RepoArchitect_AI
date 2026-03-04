@@ -1,0 +1,414 @@
+/* Home Container - Theme Aware */
+.home-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0 10%;
+    background-color: var(--bg-body);
+    /* Variable */
+    color: var(--text-primary);
+    /* Variable */
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Background Effects */
+.home-bg-effects {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.5;
+    animation: pulseFloat 10s infinite alternate ease-in-out;
+}
+
+.blob-1 {
+    top: -20%;
+    right: -10%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, var(--blob-color-1), transparent);
+    /* Variable */
+    box-shadow: 0 0 100px var(--blob-color-1);
+}
+
+.blob-2 {
+    bottom: -20%;
+    left: -10%;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, var(--blob-color-2), transparent);
+    /* Variable */
+    animation-delay: -5s;
+    box-shadow: 0 0 100px var(--blob-color-2);
+}
+
+.grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(var(--card-border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--card-border) 1px, transparent 1px);
+    background-size: 50px 50px;
+    mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+    -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+    z-index: 0;
+    opacity: 0.5;
+}
+
+@keyframes pulseFloat {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.4;
+    }
+
+    100% {
+        transform: translate(20px, 20px) scale(1.1);
+        opacity: 0.6;
+    }
+}
+
+/* Left Content */
+.home-content-left {
+    flex: 1;
+    z-index: 1;
+    padding-right: 2rem;
+    max-width: 600px;
+    text-align: left;
+}
+
+.greeting {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    font-family: monospace;
+    background: var(--card-bg);
+    padding: 0.4rem 0.8rem;
+    border-radius: 50px;
+    border: 1px solid var(--card-border);
+}
+
+.greeting-icon {
+    color: var(--secondary-color);
+}
+
+.name {
+    font-size: 4rem;
+    font-weight: 800;
+    margin: 1rem 0 0.5rem;
+    color: var(--text-primary);
+    /* Fallback */
+    background: linear-gradient(to right, var(--text-primary), #a5b4fc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.role {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0.5rem 0 1.5rem;
+    line-height: 1.3;
+}
+
+.description {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 3.5rem;
+    align-items: center;
+}
+
+.btn-primary {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, var(--primary-color), #8b5cf6);
+    color: white;
+    padding: 0.9rem 1.8rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(99, 102, 241, 0.6);
+}
+
+.btn-secondary {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: transparent;
+    color: var(--text-primary);
+    padding: 0.9rem 1.8rem;
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+    border-color: var(--primary-color);
+    background-color: var(--card-bg);
+}
+
+/* Stats */
+.stats-row {
+    display: flex;
+    gap: 3rem;
+    border-top: 1px solid var(--card-border);
+    padding-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-accent);
+    line-height: 1;
+}
+
+.stat-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.3;
+    font-weight: 500;
+    text-align: left;
+}
+
+/* Right Content - Code Window */
+.home-content-right {
+    flex: 1;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.code-window {
+    background: var(--input-bg);
+    /* Use input-bg or darker card */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 12px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid var(--card-border);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.code-window:hover {
+    transform: translateY(-5px) scale(1.02);
+    border-color: var(--primary-color);
+}
+
+.window-header {
+    background: rgba(30, 41, 59, 0.5);
+    /* Keep dark for code window? Or Variable? Code is usually dark theme even on light sites. But let's verify. */
+    /* If light mode, code window usually remains dark IDE style? */
+    /* I'll FORCE dark style for code window content by not using variables for text colors inside code window, or ensuring variables map to dark for it? */
+    /* Actually, user wants "Whole change to light". A light-themed Code Editor exists. */
+    /* I will use variables. */
+    background: var(--card-bg);
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.window-dots {
+    display: flex;
+    gap: 8px;
+    margin-right: 16px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+.dot.red {
+    background: #ef4444;
+}
+
+.dot.yellow {
+    background: #f59e0b;
+}
+
+.dot.green {
+    background: #10b981;
+}
+
+.filename {
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.window-content {
+    padding: 24px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background: transparent;
+}
+
+.code-line {
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.comment {
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+.keyword {
+    color: #c084fc;
+}
+
+/* Might need variable if light mode syntax highlighting differs. */
+/* Keeping syntax colors static for now as they usually work on both or need complex logic. */
+
+.class-name {
+    color: #f472b6;
+}
+
+.string {
+    color: #34d399;
+}
+
+.indent {
+    padding-left: 1.5rem;
+}
+
+.variable {
+    color: #818cf8;
+}
+
+.cursor {
+    display: inline-block;
+    width: 8px;
+    height: 18px;
+    background-color: var(--secondary-color);
+    vertical-align: middle;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.contact-info {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    font-size: 0.85rem;
+    border-top: 1px solid var(--card-border);
+    padding-top: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    transition: color 0.2s;
+}
+
+.contact-item:hover {
+    color: var(--text-primary);
+}
+
+.contact-item svg {
+    width: 16px;
+    height: 16px;
+    color: var(--secondary-color);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .home-container {
+        flex-direction: column;
+        padding: 8rem 5% 4rem;
+        text-align: center;
+        justify-content: flex-start;
+    }
+
+    .home-content-left {
+        max-width: 100%;
+        padding-right: 0;
+        margin-bottom: 4rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .greeting,
+    .action-buttons,
+    .stats-row {
+        justify-content: center;
+    }
+
+    .description {
+        margin: 0 auto 2rem;
+    }
+
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+
+    .blob {
+        opacity: 0.3;
+    }
+
+    .name {
+        font-size: 2.5rem;
+    }
+}
