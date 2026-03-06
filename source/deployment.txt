@@ -1,0 +1,10 @@
+Front End:
+
+Vercel
+
+
+Backend :
+
+Render 
+
+https://repoarchitect-ai.onrender.com
