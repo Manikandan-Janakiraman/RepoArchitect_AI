@@ -95,7 +95,7 @@ export default function GitHubAnalyzer() {
           {/* Header */}
           
             <div className="bg-[url('./assets/search.jpg')] bg-cover bg-center h-screen flex flex-col gap-5 justify-center items-center">
-              <h1 className="text-4xl font-bold">RepoArchitect AI</h1>
+              <h1 className="text-4xl font-bold">RepoArchitect Analyzer</h1>
               <p>Turn Any Repository into a System Blueprint.</p>
               <div className="flex items-center space-x-3">
                 
